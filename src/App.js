@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { CSVLink } from "react-csv";
+const csvData = [
+  ["County Name", "Population"],
+  ["India", "2B"],
+  ["Spain", "2M"],
+];
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CSVLink data={csvData} filename={"filename.csv"}>
+        Download
+      </CSVLink>
     </div>
   );
 }
